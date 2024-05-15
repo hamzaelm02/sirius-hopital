@@ -1,0 +1,11 @@
+edu\ezip\ing1\pds\front\Controller\StockQuantityAlertPane.class
+edu\ezip\ing1\pds\front\Controller\AccesMedPaneController.class
+edu\ezip\ing1\pds\front\Controller\PersonnelPaneController.class
+edu\ezip\ing1\pds\front\Controller\MainFrameController.class
+edu\ezip\ing1\pds\front\Controller\ShowPaneController.class
+edu\ezip\ing1\pds\front\Design\MainFrame.class
+edu\ezip\ing1\pds\front\Controller\StockShowController.class
+edu\ezip\ing1\pds\front\Design\SwitchScene.class
+edu\ezip\ing1\pds\front\Controller\PrincipalPaneController.class
+edu\ezip\ing1\pds\front\Controller\StockPrincipalController.class
+edu\ezip\ing1\pds\front\Controller\InscriptionPaneController.class

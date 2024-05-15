@@ -1,0 +1,92 @@
+#leftPane {
+-fx-background-color: #BFFAFD;
+}
+
+#scan-button {
+   -fx-font-family: "Arial";
+                    -fx-font-size: 10.5pt;
+                    -fx-font-weight: bold;
+                    -fx-text-fill: gray;
+                    -fx-background-color: white;
+                    -fx-border-radius: 30 30 30 30;
+                    -fx-padding: 2.5px 2.5px;
+                    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#scan-button:hover {
+            -fx-background-color :  #07f7f7;
+            -fx-background-radius: 0 30 30 0;
+}
+
+#scan-button:pressed {
+         -fx-background-color :  #239c9c;
+         -fx-background-radius: 0 30 30 0;
+}
+
+#alert-button {
+     -fx-font-family: "Arial";
+                        -fx-font-size: 10.5pt;
+                        -fx-font-weight: bold;
+                        -fx-text-fill: gray;
+                        -fx-background-color: white;
+                        -fx-border-radius: 30 30 30 30;
+                        -fx-padding: 2.5px 2.5px;
+                        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#alert-button:hover {
+      -fx-background-color :  #07f7f7;
+      -fx-background-radius: 0 30 30 0;
+}
+
+#alert-button:pressed {
+        -fx-background-color :  #239c9c;
+        -fx-background-radius: 0 30 30 0;
+}
+
+#show-button {
+        -fx-font-family: "Arial";
+                                -fx-font-size: 10.5pt;
+                                -fx-font-weight: bold;
+                                -fx-text-fill: gray;
+                                -fx-background-color: white;
+                                -fx-border-radius: 30 30 30 30;
+                                -fx-padding: 2.5px 2.5px;
+                                -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#show-button:hover {
+
+         -fx-background-color :  #07f7f7;
+         -fx-background-radius: 0 30 30 0;
+
+}
+
+#show-button:pressed {
+         -fx-background-color :  #239c9c;
+                -fx-background-radius: 0 30 30 0;
+}
+
+#return-button {
+        -fx-font-family: "Arial";
+                            -fx-font-size: 14pt;
+                            -fx-font-weight: bold;
+                            -fx-text-fill: gray;
+                            -fx-background-color: white;
+                            -fx-border-radius: 30 30 30 30;
+                            -fx-padding: 2.5px 2.5px;
+                            -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#return-button:hover {
+         -fx-background-color :  #07f7f7;
+                 -fx-background-radius: 0 30 30 0;
+}
+
+#return-button:pressed {
+    -fx-background-color :  #239c9c;
+                    -fx-background-radius: 0 30 30 0;
+}
+
+#top-pane-scan {
+-fx-background-color: #BFFAFD;}

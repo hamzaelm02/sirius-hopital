@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="PrincipalBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.front.Controller.PrincipalPaneController">
+   <top>
+      <AnchorPane id="top-principal-pane" fx:id="topPane" prefHeight="78.0" prefWidth="600.0" stylesheets="@../resources-css/PrincipalPane.css" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="84.0" fitWidth="118.0" layoutX="251.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources-images/Epitalogo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane id="left-principal-pane" fx:id="leftPane" prefHeight="391.0" prefWidth="121.0" stylesheets="@../resources-css/PrincipalPane.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="inscription-button" fx:id="inscriptionPrincipalButton" layoutY="75.0" mnemonicParsing="false" onAction="#setIncriptionButtonOnAction" stylesheets="@../resources-css/PrincipalPane.css" text="Inscription">
+               <graphic>
+                  <FontAwesomeIconView glyphName="ADDRESS_CARD" />
+               </graphic>
+            </Button>
+            <Button id="acces-medicament-button" layoutY="231.0" mnemonicParsing="false" onAction="#setAccesMedOnAction" stylesheets="@../resources-css/PrincipalPane.css" text="Acces Med">
+               <graphic>
+                  <FontAwesomeIconView glyphName="MEDKIT" />
+               </graphic>
+            </Button>
+            <Button id="return-principal-button" layoutY="2.0" mnemonicParsing="false" onAction="#returnInscriptionButtonOnAction" prefHeight="25.0" prefWidth="30.0" stylesheets="@../resources-css/PrincipalPane.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="POWER_OFF" />
+               </graphic>
+            </Button>
+            <Button id="show-button" fx:id="ShowButton" layoutX="95.0" mnemonicParsing="false" onAction="#ShowButtonOnAction" stylesheets="@../resources-css/PrincipalPane.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="EYE" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

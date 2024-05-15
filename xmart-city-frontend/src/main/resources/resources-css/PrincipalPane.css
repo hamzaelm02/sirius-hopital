@@ -1,0 +1,84 @@
+#top-principal-pane {
+    -fx-background-color : #BFFAFD;
+}
+#left-principal-pane {
+    -fx-background-color : #BFFAFD;
+}
+#inscription-button {
+                -fx-font-family: "Arial";
+                -fx-font-size: 10.5pt;
+                -fx-font-weight: bold;
+                -fx-text-fill: gray;
+                -fx-background-color: white;
+                -fx-border-radius: 30 30 30 30;
+                -fx-padding: 2.5px 2.5px;
+                -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#inscription-button:hover {
+        -fx-background-color :  #07f7f7;
+        -fx-background-radius: 0 30 30 0;
+}
+#inscription-button:pressed {
+    -fx-background-color :  #239c9c;
+    -fx-background-radius: 0 30 30 0;
+}
+#acces-medicament-button {
+                    -fx-font-family: "Arial";
+                    -fx-font-size: 10.5pt;
+                    -fx-font-weight: bold;
+                    -fx-text-fill: gray;
+                    -fx-background-color: white;
+                    -fx-border-radius: 30 30 30 30;
+                    -fx-padding: 2.5px 2.5px;
+                    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#acces-medicament-button:hover {
+            -fx-background-color :  #07f7f7;
+            -fx-background-radius: 0 30 30 0;
+}
+#acces-medicament-button:pressed {
+            -fx-background-color :  #239c9c;
+            -fx-background-radius: 0 30 30 0;
+}
+#return-principal-button {
+-fx-font-family: "Arial";
+                    -fx-font-size: 14pt;
+                    -fx-font-weight: bold;
+                    -fx-text-fill: gray;
+                    -fx-background-color: white;
+                    -fx-border-radius: 30 30 30 30;
+                    -fx-padding: 2.5px 2.5px;
+                    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#return-principal-button:hover {
+        -fx-background-color :  #07f7f7;
+        -fx-background-radius: 30 30 30 30;
+}
+
+#return-principal-button:pressed {
+     -fx-background-color :  #239c9c;
+     -fx-background-radius: 30 30 30 30;
+}
+
+#show-button {
+    -fx-font-family: "Arial";
+                        -fx-font-size: 14pt;
+                        -fx-font-weight: bold;
+                        -fx-text-fill: gray;
+                        -fx-background-color: white;
+                        -fx-border-radius: 30 30 30 30;
+                        -fx-padding: 2.5px 2.5px;
+                        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 1);
+}
+
+#show-button:hover {
+     -fx-background-color :  #07f7f7;
+            -fx-background-radius: 30 30 30 30;
+}
+#show-button:pressed {
+          -fx-background-color :  #239c9c;
+             -fx-background-radius: 30 30 30 30;
+}

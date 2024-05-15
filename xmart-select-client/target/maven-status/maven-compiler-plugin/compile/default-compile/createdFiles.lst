@@ -1,0 +1,11 @@
+edu\ezip\ing1\pds\client\SelectAllProfessionClientRequest.class
+edu\ezip\ing1\pds\client\SelectAllMedicamentClientRequest.class
+edu\ezip\ing1\pds\client\SelectProfession.class
+edu\ezip\ing1\pds\client\MainSelectAllProfession.class
+edu\ezip\ing1\pds\client\SelectAllService.class
+edu\ezip\ing1\pds\client\SelectAllStudentsClientRequest.class
+edu\ezip\ing1\pds\client\SelectAllStockClientRequest.class
+edu\ezip\ing1\pds\client\MainSelectAllStock.class
+edu\ezip\ing1\pds\client\MainSelectAllMedicament.class
+edu\ezip\ing1\pds\client\SelectProfessionClientRequest.class
+edu\ezip\ing1\pds\client\MainSelectClient.class

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ezip.ing1.pds.front.Controller.AccesMedPaneController">
+   <center>
+      <TableView fx:id="tableMed" prefHeight="400.0" prefWidth="559.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="codeBarreColumn" prefWidth="69.33331298828125" text="code_barre" />
+          <TableColumn fx:id="nomColumn" prefWidth="234.66671752929688" text="nom" />
+            <TableColumn fx:id="categorieColumn" prefWidth="70.6666259765625" text="categorie" />
+            <TableColumn fx:id="idpColumn" prefWidth="87.33331298828125" text="id_profession" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

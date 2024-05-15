@@ -1,0 +1,6 @@
+databaseName: "epital_sirius"
+host: "172.31.249.38"
+port: 5432
+username : "postgres"
+password: "toto"
+poolSize: 1

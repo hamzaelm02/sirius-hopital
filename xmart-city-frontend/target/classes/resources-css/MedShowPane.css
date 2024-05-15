@@ -1,0 +1,23 @@
+.table-view {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+}
+
+/* Styling the table header */
+.table-view th {
+  background-color: #3498db; /* Blue color for header */
+  color: #fff; /* White text color */
+  padding: 8px;
+  text-align: left;
+}
+.table-view tr:hover {
+  background-color: #f5f5f5; /* Light gray background color on hover */
+}
+
+/* Styling the table rows */
+.table-view td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
