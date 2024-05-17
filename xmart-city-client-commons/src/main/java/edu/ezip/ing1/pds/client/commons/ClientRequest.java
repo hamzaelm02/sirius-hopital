@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class ClientRequest<N,S> implements Runnable {
     private final Socket socket = new Socket();
-    private final Thread self;
+    private Thread self;
     private final NetworkConfig networkConfig;
     private static final String threadNamePrfx = "client_request";
     private InputStream instream;
@@ -94,6 +94,7 @@ public abstract class ClientRequest<N,S> implements Runnable {
 
     public void join() throws InterruptedException {
         self.join();
+
     }
 
     public final String getThreadName() {return threadName; }
@@ -104,5 +105,14 @@ public abstract class ClientRequest<N,S> implements Runnable {
 
     public final S getResult() {
         return result;
+    }
+
+    public void start() {
+        if (self == null || !self.isAlive()) {
+            self = new Thread(() -> {
+                // code du thread
+            });
+            self.start();
+        }
     }
 }

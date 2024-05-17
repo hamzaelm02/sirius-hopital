@@ -1,8 +1,10 @@
 edu\ezip\ing1\pds\business\dto\Stock.class
 edu\ezip\ing1\pds\business\dto\Professions.class
+edu\ezip\ing1\pds\business\dto\Gestions.class
 edu\ezip\ing1\pds\business\dto\Profession.class
 edu\ezip\ing1\pds\business\dto\Stocks.class
 edu\ezip\ing1\pds\business\dto\Students.class
+edu\ezip\ing1\pds\business\dto\Gestion.class
 edu\ezip\ing1\pds\business\dto\Student.class
 edu\ezip\ing1\pds\business\dto\Medicaments.class
 edu\ezip\ing1\pds\business\dto\Medicament.class

@@ -27,7 +27,10 @@ public class XMartCityService {
         SELECT_PROFESSIONS_BY_DOMAINE("SELECT id_profession FROM public.profession  WHERE nom_profession = ?"),
         SELECT_MEDICAMENTS_BY_DOMAINE("SELECT t.code_barre, t.nom, t.categorie, t.id_profession FROM \"public\".medicament t WHERE id_profession = ?"),
         UPDATE_EMPLOYEE("UPDATE public.employee SET email = ?, adresse = ? WHERE id_employee = ?"),
-        SELECT_ALL_STOCKS("SELECT t.medicament_id, t.quantite, t.date_expiration, t.seuil, t.nom, t.seuil_date FROM \"public\".stock t");
+        SELECT_ALL_STOCKS("SELECT t.medicament_id, t.quantite, t.date_expiration, t.seuil, t.nom, t.seuil_date FROM \"public\".stock t"),
+        UPDATE_MEDICAMENT("UPDATE \"public\".stock SET quantite = ? WHERE medicament_id = ?"),
+        SELECT_GESTION("SELECT t.nom_medicament, t.description, t.effet_secondaire, t.medicament_id, t.id_similaire FROM \"public\".gestion t");
+
         private final String query;
 
         private Queries(final String query) {
@@ -167,7 +170,40 @@ public class XMartCityService {
                 ObjectMapper mapper = new ObjectMapper();
                 return new Response(request.getRequestId(), mapper.writeValueAsString(listStocks));
 
-            }else {
+            } else if (request.getRequestOrder().trim().equals("UPDATE_MEDICAMENT")) {
+                ObjectMapper mapper = new ObjectMapper();
+                Map<String, Object> params = mapper.readValue(request.getRequestBody(), Map.class);
+                int medicamentId = (int) params.get("medicament_id");
+                int quantite = (int) params.get("quantite");
+
+                // Journalisation pour le débogage
+                System.out.println("Mise à jour du médicament ID: " + medicamentId + " avec la nouvelle quantité: " + quantite);
+
+                PreparedStatement preparedStatement = connection.prepareStatement(Queries.UPDATE_MEDICAMENT.query);
+                preparedStatement.setInt(1, quantite);
+                preparedStatement.setInt(2, medicamentId);
+                int rowsUpdated = preparedStatement.executeUpdate();
+
+                Response response = new Response();
+                response.setRequestId(request.getRequestId());
+                response.setResponseBody("{\"rowsUpdated\": " + rowsUpdated + "}");
+
+                // Journalisation de la réponse pour le débogage
+                System.out.println("Lignes mises à jour: " + rowsUpdated);
+                return response;
+            } else if (request.getRequestOrder().trim().equals("SELECT_GESTION")) {
+                final PreparedStatement preparedStatement = connection.prepareStatement(Queries.SELECT_GESTION.query);
+                ResultSet resultat = preparedStatement.executeQuery();
+                Gestions gestList = new Gestions();
+                while (resultat.next()) {
+                    final Gestion gestion = new Gestion().build(resultat);
+                    gestList.add(gestion);
+                }
+                ObjectMapper mapper = new ObjectMapper();
+                return new Response(request.getRequestId(), mapper.writeValueAsString(gestList));
+
+
+            } else {
                 System.out.println("################################################################");
                 System.out.println("Je n'ai rien executé ");
                 System.out.println("################################################################");

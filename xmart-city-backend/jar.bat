@@ -1,7 +1,7 @@
 @echo off
 set VM_server=client
 set VM_HOST=172.31.249.196
-set JAR_PATH=C:\Users\aadjaz\Desktop\Sirius\prototype-ing1\xmart-city-backend\target\xmart-zity-backend-1.0-SNAPSHOT-jar-with-dependencies.jar
+set JAR_PATH=C:\Users\info\Desktop\proto vF\prototype-ing1\xmart-city-backend\target\xmart-zity-backend-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 
 echo Exécution du maven...

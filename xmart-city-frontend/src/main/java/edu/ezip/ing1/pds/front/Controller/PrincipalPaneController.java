@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,6 +32,8 @@ import java.util.ResourceBundle;
 
 public class PrincipalPaneController implements Initializable {
 
+    @FXML
+    public Label welcomeLabel;
     @FXML
     private BorderPane PrincipalBorderPane;
     @FXML
@@ -52,6 +55,7 @@ public class PrincipalPaneController implements Initializable {
 
     @FXML
     public void setIncriptionButtonOnAction(ActionEvent actionEvent) throws IOException {
+        PrincipalBorderPane.getChildren().removeAll(welcomeLabel);
         SwitchScene switchScene = new SwitchScene();
         BorderPane pane = switchScene.getBorderPane("src/main/resources/resources-fxml/InscriptionPaneView.fxml");
         PrincipalBorderPane.setCenter(pane);

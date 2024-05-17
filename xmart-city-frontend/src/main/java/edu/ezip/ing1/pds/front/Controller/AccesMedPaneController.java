@@ -12,13 +12,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,25 +31,10 @@ public class AccesMedPaneController implements Initializable {
     public BorderPane accesMedPane;
     @FXML
     public Button connectionButton;
-    @FXML
-    private TableColumn<Medicament,Integer > categorieColumn;
-
-    @FXML
-    private TableColumn<Medicament, Integer> codeBarreColumn;
-
-    @FXML
-    private TableColumn<Medicament, Integer> idpColumn;
-
-    @FXML
-    private TableColumn<Medicament, String> nomColumn;
 
     @FXML private Label MedMessageError;
     @FXML
     public TextField idProfessionField;
-    @FXML
-    private TableView<Medicament> tableMed;
-
-    public ObservableList<Medicament> medata = FXCollections.observableArrayList();
 
 
 
@@ -60,46 +48,53 @@ public class AccesMedPaneController implements Initializable {
     }
 
 
+
     @FXML
-    public void ConnectionButtonOnAction(ActionEvent actionEvent) throws  Exception {
-        if (idProfessionField.getText().isEmpty()){
+    public void ConnectionButtonOnAction(ActionEvent actionEvent) {
+        MedMessageError.setVisible(false);
+
+        if (idProfessionField.getText().isEmpty()) {
             MedMessageError.setText("Champs vides");
             MedMessageError.setTextFill(Color.RED);
             MedMessageError.setVisible(true);
-        }else {
+            return;
+        }
 
-        Professions professions = SelectProfession.getProfession();
-        for(final Profession profession : professions.getProfessions()){
-            if(idProfessionField.getText().equals(profession.getId_profession().toString())){
-                accesMedPane.getChildren().removeAll(MedMessageError,idProfessionField);
-               accesMedPane.setCenter(new SwitchScene().getBorderPane("src/main/resources/resources-fxml/MedPaneShow.fxml"));
+        try {
+            Professions professions = SelectProfession.getProfession();
+            boolean professionFound = false;
 
-                Medicament medicament = new Medicament ();
-                medicament.setId_profession(Integer.parseInt(idProfessionField.getText()));
-                Medicaments medicaments = MainSelectAllMedicament.main(medicament);
-                for(final  Medicament med : medicaments.getMedicaments()){
-                medata.add(med);
+            for (Profession profession : professions.getProfessions()) {
+                if (idProfessionField.getText().equals(profession.getId_profession().toString())) {
+                    professionFound = true;
+                    Stage showStage = new Stage();
+
+                    SwitchScene switchScene = new SwitchScene();
+                    AnchorPane pane = switchScene.getAnchorPane("src/main/resources/resources-fxml/M.fxml");
+                    Scene ShowScene = new Scene(pane);
+                    showStage.setHeight(500);
+                    showStage.setWidth(745);
+                    showStage.setTitle("LISTE DES MEDICAMENTS");
+                    showStage.setScene(ShowScene);
+                    showStage.show();
+                    break;
                 }
-                codeBarreColumn.setCellValueFactory(new PropertyValueFactory<Medicament,Integer>("code_barre"));
-                nomColumn.setCellValueFactory(new PropertyValueFactory<Medicament,String>("nom"));
-                categorieColumn.setCellValueFactory(new PropertyValueFactory<Medicament,Integer>("categorie"));
-                idpColumn.setCellValueFactory(new PropertyValueFactory<Medicament,Integer>("id_profession"));
-
-
-                tableMed.setItems(medata);
-
-
-
-
-
             }
 
-        } }
-
-
-
-
-
-
+            if (!professionFound) {
+                MedMessageError.setText("Profession non trouvée");
+                MedMessageError.setTextFill(Color.RED);
+                MedMessageError.setVisible(true);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            MedMessageError.setText("Erreur de connexion");
+            MedMessageError.setTextFill(Color.RED);
+            MedMessageError.setVisible(true);
+        }
     }
+
+
+
+
 }

@@ -45,4 +45,12 @@ public class MainFrameController implements Initializable {
         borderPane.setCenter(secondPane);
 
     }
+
+    @FXML
+    public void clientButtonOnAction(ActionEvent actionEvent) {
+        borderPane.getChildren().removeAll(centerPane, topPane);
+        BorderPane secondPane = new SwitchScene().getBorderPane("src/main/resources/resources-fxml/ClientPrincipalPane.fxml");
+        borderPane.setCenter(secondPane);
+
+    }
 }

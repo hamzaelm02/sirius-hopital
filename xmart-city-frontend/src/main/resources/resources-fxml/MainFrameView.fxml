@@ -18,8 +18,9 @@
                </image>
             </ImageView>
             <Label id="welcome-label" layoutX="413.0" layoutY="61.0" prefHeight="75.0" prefWidth="183.0" stylesheets="@../resources-css/MainFrame.css" text=" Bienvenue sur EPITAL : Votre Santé, Notre Priorité !" />
-            <Button id="button-principal" fx:id="personnelButton" layoutX="456.0" layoutY="231.0" mnemonicParsing="false" onAction="#personnelButtonOnAction" prefHeight="25.0" prefWidth="139.0" stylesheets="@../resources-css/MainFrame.css" text="Personnel" />
-            <Button id="button-principal" fx:id="stockButton" layoutX="457.0" layoutY="296.0" mnemonicParsing="false" onAction="#stockButtonOnAction" prefHeight="25.0" prefWidth="137.0" stylesheets="@../resources-css/MainFrame.css" text="Stock" />
+            <Button id="button-principal" fx:id="personnelButton" layoutX="456.0" layoutY="214.0" mnemonicParsing="false" onAction="#personnelButtonOnAction" prefHeight="25.0" prefWidth="139.0" stylesheets="@../resources-css/MainFrame.css" text="Personnel" />
+            <Button id="button-principal" fx:id="stockButton" layoutX="457.0" layoutY="279.0" mnemonicParsing="false" onAction="#stockButtonOnAction" prefHeight="25.0" prefWidth="137.0" stylesheets="@../resources-css/MainFrame.css" text="Stock" />
+            <Button id="button-principal" fx:id="clientButton" layoutX="457.0" layoutY="348.0" mnemonicParsing="false" onAction="#clientButtonOnAction" prefHeight="29.0" prefWidth="138.0" text="Client" />
          </children>
       </AnchorPane>
    </center>

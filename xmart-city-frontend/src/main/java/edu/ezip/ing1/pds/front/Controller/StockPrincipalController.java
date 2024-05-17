@@ -25,12 +25,13 @@ public class StockPrincipalController implements Initializable {
     public AnchorPane leftPaneScan;
     @FXML
     public Button returnButtonScan;
-    @FXML
-    public AnchorPane rightPaneScan;
+
     @FXML
     public BorderPane BorderPaneScan;
     @FXML
     public AnchorPane topPaneScan;
+    @FXML
+    public AnchorPane rightAnchorPane;
 
 
     @FXML
@@ -52,6 +53,18 @@ public class StockPrincipalController implements Initializable {
 
     @FXML
     void scanButtonOnAction(ActionEvent event) {
+        Stage showStage = new Stage();
+
+        SwitchScene switchScene = new SwitchScene();
+        AnchorPane ScanPane = switchScene.getAnchorPane("src/main/resources/resources-fxml/ScanStockPane.fxml");
+        Scene ShowScene = new Scene(ScanPane);
+        showStage.setHeight(500);
+        showStage.setWidth(500);
+        showStage.setTitle("Scanner");
+        showStage.setScene(ShowScene);
+        showStage.show();
+
+
 
     }
 
@@ -76,7 +89,7 @@ public class StockPrincipalController implements Initializable {
 
     @FXML
     public void returnButtonOnAction(ActionEvent actionEvent) {
-    BorderPaneScan.getChildren().removeAll(leftPaneScan,rightPaneScan,topPaneScan);
+    BorderPaneScan.getChildren().removeAll(leftPaneScan,rightAnchorPane,topPaneScan);
     BorderPane thirdPane = new SwitchScene().getBorderPane("src/main/resources/resources-fxml/MainFrameView.fxml");
     BorderPaneScan.setCenter(thirdPane);
     }
